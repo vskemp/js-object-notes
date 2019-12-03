@@ -1,3 +1,5 @@
+////////// LITERALS & PROPERTIES ///////////
+
 let user = new Object(); // "object constructor" syntax
 let user = {};  // "object literal" syntax
 
@@ -75,3 +77,29 @@ let user = {
 
 let key = "name";
 alert( user.key ) // undefined
+
+//////// COMPUTED PROPERTIES ////////
+
+// We can use square brackets in an object literal. That’s called computed properties.
+// For instance:
+
+let fruit = prompt("Which fruit to buy?", "apple");
+let bag = {
+  [fruit]: 5, // the name of the property is taken from the variable fruit
+};
+alert( bag.apple ); // 5 if fruit="apple"
+
+// Essentially, that works the same as:
+
+let fruit = prompt("Which fruit to buy?", "apple");
+let bag = {};
+// take property name from the fruit variable
+bag[fruit] = 5;
+
+// We can use more complex expressions inside square brackets:
+
+let fruit = 'apple';
+let bag = {
+  [fruit + 'Computers']: 5 // bag.appleComputers = 5
+};
+
